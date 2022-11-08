@@ -134,12 +134,17 @@ $V_{CS\_max} = 1.1 V$
 $V_{CS\_min} = 0.9 V$
 
 Az R1 ellenálláson folyható maximum áram: 
+
 $$ I_{R1\_max} = I_{max} + \frac{\Delta i_L}{2} = 2.225 A$$
+
 Így a B2 áramgenerátoron folyó maximális áram $CS_{ratio} = 100$ érték mellett: 
+
 $$ I_{B2\_max} = \frac{ I_{R1\_max} }{ CS_{ratio} } = 22.25 mA$$
 
 Így az R8 ellenállás értéke megkapható mivel ha azt szeretnénk hogy erre az áramra a legrosszabb esetben is biztos billenjen, ezért az $U_{CS\_max}$ feszültséget kell hogy elérje ekkor:
+
 $$ R_8 = \frac{ U_{CS\_max} }{I_{B2\_max}} = 49.438 \Omega$$
+
 Az ehhez legközelebbi standard ellenállás érték választásával: $R_8 = 51 \Omega$
 
 ### A kimeneti feszültség visszacsatolás méretezése:
@@ -156,8 +161,11 @@ $V_{FB\_min} = 2.45 V$
 
 
 $$ U_{ki} \times \frac{ R_{19} }{ R_{19} + R_{20} } = V_{FB} $$
+
 Így $R_{19}$ a következő:
+
 $$ R_{19} = R_{20} \times \frac{ V_{FB\_typ} }{ U_{ki} - V_{FB\_typ} } = 2.382 k\Omega$$
+
 Az ehhez legközelebbi standard ellenállás érték választásával: $R_{19} = 2.4 k\Omega$
 
 ### Az oszcillátor tervezése
