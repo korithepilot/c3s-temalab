@@ -1,7 +1,7 @@
 	Excel file a számításokkal: https://docs.google.com/spreadsheets/d/1Z4R3-6jwl1uDZT865t_YVpSVFB3wFbcu7YvxOZjA5Lw/edit#gid=0
 
 
-![ASD]("képek/Pasted image 20221025113505.png")
+![Buck Converter Kapcsolási rajz](/kepek/buck_kapcs.png)
 
 ## Működés
 t_be ideig kapcsoló zár: L árama lineárisan nő, U_C nő, D1 dióda zárt
@@ -19,7 +19,7 @@ t_ki ideig:
 $$\Delta i_{L} = \frac{U_l \times t_{ki}}{L} = \frac{(U_{ki} + U{D}) \times t_{ki}}{L} \approx \frac{U_{ki} \times t_{ki}}{L}$$
 Így a következő a tekercs áramának időfüggvénye:
 
-![[Pasted image 20221025113525.png]]
+![Tekercs áramának időfüggvénye](/kepek/i_l(t).png)
 
 Ha a kettőt kiegyenlítjük egymással, akkor megkapjuk a bekapcsolási időt:
 
@@ -63,10 +63,10 @@ Ezt a képletet kicsit átalakítva megkapjuk hogy adott $C$ érték mellett mek
 Az űrtechnikában elterjedt TI UCCx8C4x családból származó IC-t fogunk használni a szabályozáshoz a következő elrendezésben:
 
 A tápegység rajza:
-![[Pasted image 20221108184259.png]]
+![Buck Converter kapcsolási rajza LT SPICE-ban](/kepek/LT_buck.png)
 
 A szabályozási kör rajza:
-![[Pasted image 20221108184234.png]]
+![Szabályozási kör kapcsolási rajza LT SPICE-ban](/kepek/LT_szab_kor.png)
 
 ### Röviden az IC működése:
 A kapcsoló egy SR Latch kimenetére van kapcsolva, aminek az S lábára időnként egy oszcillátor egy pulzust küld, ez felel azért hogy a kapcsoló zárjon. A kapcsoló nyitásáért a Latch R lába felelős, egy komparátor van rákötve mely a tápegységben lévő söntellenállás áramából származó feszültséget és egy kontroll feszültséget hasonlít össze, és ha az áram meghalad egy bizonyos értéket akkor lekapcsol. Ezt a kontroll feszültséget a kimeneti feszültség leosztásából kapjuk.
@@ -85,7 +85,7 @@ A kapcsoló egy SR Latch kimenetére van kapcsolva, aminek az S lábára időnk�
 
 ### Az áram mérésének méretezése:
 A kapcsolás aminek a kimenete az IC CS lábára megy:
-![[Pasted image 20221108191709.png]]
+![Sönt ellenállás kapcsolási rajza LT SPICE-ban](/kepek/LT_shunt.png)
 A CS láb működése: ha a rá kapcsolt feszültség $V_{CS}$ adatlapi értéknél nagyobb akkor a kapcsolót nyitja. 
 
 Az adatlapból:
@@ -110,10 +110,10 @@ Az ehhez legközelebbi standard ellenállás érték választásával: $R_8 = 51
 
 ### A kimeneti feszültség visszacsatolás méretezése:
 A kapcsolás aminek a kimenete az IC FB lábára megy:
-![[Pasted image 20221108191910.png]]
+![Hibaerősítő kapcsolási rajza LT SPICE-ban](/kepek/LT_hibaerosito.png)
 
 Az FB láb működése: egy hibaerősítő invertáló bemenetére van kötve, az erősítő nem inverteló bemenete pedig a belső $V_{REF}$ feszültségéből előállított $V_{FB}$ feszültségre van kötve, a kimenetéből pedig a $V_{CS}$ feszültség van előállítva. Az ellenállás osztóval azt szeretnénk elérni, hogy amikor a kimenet eléri az $U_{ki}$ feszültséget akkor az FB lábra kötött feszültség érje le vagy haladja meg az $U_{FB}$ feszültséget.
-![[Pasted image 20221108192325.png]]
+![Feedback láb sematikus ábrája az adatlapban](/kepek/DS_FB.png)
 
 Az adatlapból:
 $V_{FB\_typ} = 2.5 V$
@@ -131,7 +131,7 @@ Az ehhez legközelebbi standard ellenállás érték választásával: $R_{19} =
 
 ### Az oszcillátor tervezése
 Az IC-ben lévő oszcillátor:
-![[Pasted image 20221108193305.png]]
+![Oszcillátor sematikus ábrája az adatlapban](/kepek/DS_OSC.png)
 $R_{RT}$ és $C_{CT}$ elemeket nekünk kell méretezni, az IC-ben van egy invertáló hiszterézises komparátor, ami az adatlap szerint $V_{osc\_L} = 0.7V$ és $V_{osc\_H} = 3 V$ pontokban billen, és amikor negatív a kimenete akkor $I_{osc}$ árammal üríti az RC tagunkat.
 
 Az adatlapból:
