@@ -92,41 +92,32 @@ A kapcsoló egy SR Latch kimenetére van kapcsolva, aminek az S lábára időnk�
 ### A paraméterek amikre méretezünk:
 
 - bemeneti feszültség: 
-
 $U_{be} = 48 V$
 
 - kimeneti feszültség: 
-
 $U_{ki} = 12 V$
 
 - üzemi áram: 
-
 $I_{norm} = 1 A$
 
 - csúcsáram: 
-
 $I_{max} = 2 A$
 
 - a sönt árama egy áramtranszformátoron keresztül van mérve ami 50 vagy 100-as osztású $\rightarrow$ $CS_{ratio} = 50$ vagy $100$
 
 - maximális kitöltési tényező: 
-
 $\delta_{max} = 80 \%$
 
 - frekvencia: 
-
 $f = 200 kHz$
 
 - a tápegységben lévő tekercs induktivitása: 
-
 $L = 100 \micro H$
 
 - a tápegységben lévő kondenzátor induktivitása: 
-
 $C = 100 \micro F$
 
 - a kimeneti feszültség leosztásában lévő felső ellenállás: 
-
 $R_{20} = 9.1 k\Omega$
 
 ### Az áram mérésének méretezése:
