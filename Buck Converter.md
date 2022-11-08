@@ -126,24 +126,34 @@ $I_{osc\_max} = 9 mA$
 $I_{osc\_min} = 7.7 mA$
 
 A számításokhoz az egy tárolós rendszerek "magic" formuláját használtuk fel, ami:
+
 $$ x(t) = végérték + (kezdetiérték - végérték) \times e^{ - \frac{t}{\tau} } $$
 
 Az RC-tag töltése:
+
 $$ V_{osc\_H} = V_{REF} + (V_{osc\_L} - V_{REF}) \times e^{ - \frac{t_{on}} {R_{RT}C_{CT}} } $$
+
 Így a $t_{on}$:
+
 $$ t_{on} = R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}} } $$
 
 Az RC-tag ürítése:
+
 $$ V_{osc\_L} = (V_{REF} - R_{RT}I_{osc}) + (V_{osc\_L} - (V_{REF} - R_{RT}I_{osc})) \times e^{ - \frac{t_{off}} {R_{RT}C_{CT}} }$$
 
 Így a $t_{off}$:
+
 $$ t_{off} = R_{RT}C_{CT} \times \ln {\frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})} } $$
 
 
 Itt arra szeretnénk méretezni hogy legrosszabb esetben is maximum 80% legyen a kitöltése tényező - ez az az eset amikor a $V_{REF}$ a legkisebb és $I_{osc}$ a legnagyobb. A levezetések:
+
 $$ \frac{t_{on}} {\delta_{max}} = \frac{t_{off}} {1-\delta_{max}} $$
+
 $$ \frac{1-\delta_{max}}{\delta_{max}} t_{on} = t_{off} $$
+
 $$ \frac{1-\delta_{max}}{\delta_{max}} \times R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}} } = R_{RT}C_{CT} \times \ln {\frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}} $$
+
 $R_{RT}C_{CT}$-vel lehet egyszerűsíteni, majd mind a két oldalt e-re emelem:
 
 $$ (\frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}})^{ \frac{1-\delta_{max}}{\delta_{max}} } = \frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}$$
