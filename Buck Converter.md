@@ -33,7 +33,9 @@ Hogy folytonos módban maradjunk a $\Delta i_L$-nek nem szabad elérni az $I_{ki
 $$ L_{min} = \frac{(U_{be} - U{ki}) \times t_{be}}{I_{ki}} = \frac{U_{ki} \times t_{ki}}{I_{ki}}$$
 
 ## Kondenzátorra vonatkozó számítások
+
 $$ I_C(t) = I_L(t) - I_{ki} $$
+
 Ha ez az áram pozitív akkor a kondenzátor töltődik, ha negatív akkor ürül. Így a kondenzátor feszültségének is van egy hullámzása. A következő képpen határoztuk meg ennek az értékét:
 
 t = $0$-ban a kondenzátor áramának értéke $-\Delta i_L$
@@ -46,9 +48,11 @@ t = $\frac{t_{be}}{2}$-ben $U_c = U_{ki} - \Delta U_C$
 t = $\frac{t_{be}}{2}$-ben pedig $U_c = U_{ki} + \Delta U_C$
 Ez a két időpont között $$\Delta Q = \frac{ \Delta i_L \times (\frac{t_be}{2} + \frac{t_ki}{2})}{2} = \frac{ \Delta i_L \times T}{4} = \frac{ \Delta i_L}{4f}$$
 A két időpont között felírható a következő egyenlet a töltés-feszültség-kapacitás kapcsolatával:
+
 $$ -\Delta U_C + \frac{\Delta Q}{C} = +\Delta U_C$$
 
 Így kaphatunk egy minimum értéket a kapacitásra, hiszen ha nagyobb a kapacitás akkor ugyanakkora töltéstől kevesebb feszültségre töltődik, így kisebb lesz a feszültségének hullámzása is:
+
 $$ C_{min} = \frac{\Delta Q}{2 \Delta U_C} = \frac{\Delta i_L}{8f \Delta U_C} = \frac{\Delta i_L}{4f U_{pp}}$$
 
 A képlet valószínűleg jó, hiszen egy [Texas Instruments méretezési utasításban](https://www.ti.com/lit/an/slva477b/slva477b.pdf?ts=1666618206561&ref_url=https%253A%252F%252Fwww.google.com%252F)  is ez szerepel.
@@ -89,12 +93,18 @@ $V_{CS\_max} = 1.1 V$
 $V_{CS\_min} = 0.9 V$
 
 Az R1 ellenálláson folyható maximum áram: 
+
 $$ I_{R1\_max} = I_{max} + \frac{\Delta i_L}{2} = 2.225 A$$
+
 Így a B2 áramgenerátoron folyó maximális áram $CS_{ratio} = 100$ érték mellett: 
+
 $$ I_{B2\_max} = \frac{ I_{R1\_max} }{ CS_{ratio} } = 22.25 mA$$
 
-Így az R8 ellenállás értéke megkapható mivel ha azt szeretnénk hogy erre az áramra a legrosszabb esetben is biztos billenjen, ezért az $U_{CS\_max}$ feszültséget kell hogy elérje ekkor:
+Így az R8 ellenállás értéke megkapható mivel ha azt szeretnénk hogy erre az áramra a legrosszabb esetben is biztos billenjen, ezért az $U_{CS\_max}$ 
+feszültséget kell hogy elérje ekkor:
+
 $$ R_8 = \frac{ U_{CS\_max} }{I_{B2\_max}} = 49.438 \Omega$$
+
 Az ehhez legközelebbi standard ellenállás érték választásával: $R_8 = 51 \Omega$
 
 ### A kimeneti feszültség visszacsatolás méretezése:
@@ -112,7 +122,9 @@ $V_{FB\_min} = 2.45 V$
 
 $$ U_{ki} \times \frac{ R_{19} }{ R_{19} + R_{20} } = V_{FB} $$
 Így $R_{19}$ a következő:
+
 $$ R_{19} = R_{20} \times \frac{ V_{FB\_typ} }{ U_{ki} - V_{FB\_typ} } = 2.382 k\Omega$$
+
 Az ehhez legközelebbi standard ellenállás érték választásával: $R_{19} = 2.4 k\Omega$
 
 ### Az oszcillátor tervezése
@@ -126,33 +138,50 @@ $I_{osc\_max} = 9 mA$
 $I_{osc\_min} = 7.7 mA$
 
 A számításokhoz az egy tárolós rendszerek "magic" formuláját használtuk fel, ami:
+
 $$ x(t) = végérték + (kezdetiérték - végérték) \times e^{ - \frac{t}{\tau} } $$
 
 Az RC-tag töltése:
+
 $$ V_{osc\_H} = V_{REF} + (V_{osc\_L} - V_{REF}) \times e^{ - \frac{t_{on}} {R_{RT}C_{CT}} } $$
+
 Így a $t_{on}$:
+
 $$ t_{on} = R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}} } $$
 
 Az RC-tag ürítése:
+
 $$ V_{osc\_L} = (V_{REF} - R_{RT}I_{osc}) + (V_{osc\_L} - (V_{REF} - R_{RT}I_{osc})) \times e^{ - \frac{t_{off}} {R_{RT}C_{CT}} }$$
 
 Így a $t_{off}$:
+
 $$ t_{off} = R_{RT}C_{CT} \times \ln {\frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})} } $$
 
 
 Itt arra szeretnénk méretezni hogy legrosszabb esetben is maximum 80% legyen a kitöltése tényező - ez az az eset amikor a $V_{REF}$ a legkisebb és $I_{osc}$ a legnagyobb. A levezetések:
+
 $$ \frac{t_{on}} {\delta_{max}} = \frac{t_{off}} {1-\delta_{max}} $$
+
 $$ \frac{1-\delta_{max}}{\delta_{max}} t_{on} = t_{off} $$
+
 $$ \frac{1-\delta_{max}}{\delta_{max}} \times R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}} } = R_{RT}C_{CT} \times \ln {\frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}} $$
 $R_{RT}C_{CT}$-vel lehet egyszerűsíteni, majd mind a két oldalt e-re emelem:
+
 $$ (\frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}})^{ \frac{1-\delta_{max}}{\delta_{max}} } = \frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}$$
+
 A bal oldalt elnevezem k-nak, majd átrendezéssel megkapható az $R_{RT}$:
+
 $$ k = (\frac{V_{osc\_L} - V_{REF\_min}} {V_{osc\_H} - V_{REF\_min}})^{ \frac{1-\delta_{max}}{\delta_{max}} } $$
+
 $$ R_{RT} = \frac{1}{I_{osc\_max}}(V_{REF\_min}-\frac{kV_{osc\_L} - V_{osc\_H}}{k-1}) = 1.631 k\Omega $$
+
 Az ehhez legközelebbi, ettől kisebb standard ellenállás érték választásával: $R_{RT} = 1.5 k\Omega$
 
 És ebből meg lehet kapni az oszcillátorhoz szükséges $C_{CT}$-t:
+
 $$ t_{on} = \delta_{max} T = \frac{\delta_{max}}{f} = R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF\_min}} {V_{osc\_H} - V_{REF\_min}} }$$
+
 $$ C_{CT} = \frac{\delta_{max}}{f R_{RT} \times \ln{ \frac{V_{osc\_L} - V_{REF\_min}} {V_{osc\_H} - V_{REF\_min}}} } = 3.09 nF $$
+
 Az ehhez legközelebbi, ettől nagyobb standard kondenzátor érték választásával: $C_{CT} = 3.3 nF$
 
