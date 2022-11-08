@@ -145,14 +145,26 @@ $$ \frac{t_{on}} {\delta_{max}} = \frac{t_{off}} {1-\delta_{max}} $$
 $$ \frac{1-\delta_{max}}{\delta_{max}} t_{on} = t_{off} $$
 $$ \frac{1-\delta_{max}}{\delta_{max}} \times R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}} } = R_{RT}C_{CT} \times \ln {\frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}} $$
 $R_{RT}C_{CT}$-vel lehet egyszerűsíteni, majd mind a két oldalt e-re emelem:
+
 $$ (\frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}})^{ \frac{1-\delta_{max}}{\delta_{max}} } = \frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}$$
+
 A bal oldalt elnevezem k-nak, majd átrendezéssel megkapható az $R_{RT}$:
+
 $$ k = (\frac{V_{osc\_L} - V_{REF\_min}} {V_{osc\_H} - V_{REF\_min}})^{ \frac{1-\delta_{max}}{\delta_{max}} } $$
+
 $$ R_{RT} = \frac{1}{I_{osc\_max}}(V_{REF\_min}-\frac{kV_{osc\_L} - V_{osc\_H}}{k-1}) = 1.631 k\Omega $$
-Az ehhez legközelebbi, ettől kisebb standard ellenállás érték választásával: $R_{RT} = 1.5 k\Omega$
+
+Az ehhez legközelebbi, ettől kisebb standard ellenállás érték választásával: 
+
+$R_{RT} = 1.5 k\Omega$
 
 És ebből meg lehet kapni az oszcillátorhoz szükséges $C_{CT}$-t:
+
 $$ t_{on} = \delta_{max} T = \frac{\delta_{max}}{f} = R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF\_min}} {V_{osc\_H} - V_{REF\_min}} }$$
+
 $$ C_{CT} = \frac{\delta_{max}}{f R_{RT} \times \ln{ \frac{V_{osc\_L} - V_{REF\_min}} {V_{osc\_H} - V_{REF\_min}}} } = 3.09 nF $$
-Az ehhez legközelebbi, ettől nagyobb standard kondenzátor érték választásával: $C_{CT} = 3.3 nF$
+
+Az ehhez legközelebbi, ettől nagyobb standard kondenzátor érték választásával: 
+
+$C_{CT} = 3.3 nF$
 
