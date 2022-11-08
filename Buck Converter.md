@@ -1,7 +1,7 @@
 	Excel file a számításokkal: https://docs.google.com/spreadsheets/d/1Z4R3-6jwl1uDZT865t_YVpSVFB3wFbcu7YvxOZjA5Lw/edit#gid=0
 
 
-![[Pasted image 20221025113505.png]]
+![ASD]("képek/Pasted image 20221025113505.png")
 
 ## Működés
 t_be ideig kapcsoló zár: L árama lineárisan nő, U_C nő, D1 dióda zárt
