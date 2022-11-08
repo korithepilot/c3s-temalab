@@ -36,17 +36,27 @@ Hogy folytonos módban maradjunk a $\Delta i_L$-nek nem szabad elérni az $I_{ki
 $$ L_{min} = \frac{(U_{be} - U{ki}) \times t_{be}}{I_{ki}} = \frac{U_{ki} \times t_{ki}}{I_{ki}}$$
 
 ## Kondenzátorra vonatkozó számítások
+
 $$ I_C(t) = I_L(t) - I_{ki} $$
+
 Ha ez az áram pozitív akkor a kondenzátor töltődik, ha negatív akkor ürül. Így a kondenzátor feszültségének is van egy hullámzása. A következő képpen határoztuk meg ennek az értékét:
 
+
 t = $0$-ban a kondenzátor áramának értéke $-\Delta i_L$
+
 t = $t_{be}$-ben $+\Delta i_L$
+
 t = $T$-ben pedig újra $-\Delta i_L$
 
 Mivel a növekedés lineáris és szimmetrikus tartományon történik, ezért az áram t = $\frac{t_{be}}{2}$ és $t_{be}+\frac{t_{ki}}{2}$ időpontokban nulla.
 Ugyanezekben a pontokban éri el a hullámzásának a minimum és a maximum értékét.
-t = $\frac{t_{be}}{2}$-ben $U_c = U_{ki} - \Delta U_C$ 
-t = $\frac{t_{be}}{2}$-ben pedig $U_c = U_{ki} + \Delta U_C$
+
+t = 
+$\frac{t_{be}}{2}$-ben $U_c = U_{ki} - \Delta U_C$ 
+
+t = 
+$\frac{t_{be}}{2}$-ben pedig $U_c = U_{ki} + \Delta U_C$
+
 Ez a két időpont között $$\Delta Q = \frac{ \Delta i_L \times (\frac{t_be}{2} + \frac{t_ki}{2})}{2} = \frac{ \Delta i_L \times T}{4} = \frac{ \Delta i_L}{4f}$$
 A két időpont között felírható a következő egyenlet a töltés-feszültség-kapacitás kapcsolatával:
 $$ -\Delta U_C + \frac{\Delta Q}{C} = +\Delta U_C$$
