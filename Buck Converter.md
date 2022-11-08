@@ -27,6 +27,7 @@ $$\Delta i_{L} = \frac{U_l \times t_{ki}}{L} = \frac{(U_{ki} + U{D}) \times t_{k
 Ha a kettőt kiegyenlítjük egymással, akkor megkapjuk a bekapcsolási időt:
 
 $$  \frac{(U_{be} - U{ki}) \times t_{be}}{L} = \frac{U_{ki} \times t_{ki}}{L} = \frac{U_{ki} \times (T-t_{be})}{L}$$
+
 Innen:
 
 $$ \delta = \frac{t_{be}}{T} = \frac{U_{ki}}{U_{be}}$$
