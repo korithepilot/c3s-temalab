@@ -48,7 +48,11 @@ t = $t_{be}$-ben $+\Delta i_L$
 
 t = $T$-ben pedig újra $-\Delta i_L$
 
-Mivel a növekedés lineáris és szimmetrikus tartományon történik, ezért az áram t = $\frac{t_{be}}{2}$ és $t_{be}+\frac{t_{ki}}{2}$ időpontokban nulla.
+Mivel a növekedés lineáris és szimmetrikus tartományon történik, ezért az áram t = 
+
+$\frac{t_{be}}{2}$ és $t_{be}+\frac{t_{ki}}{2}$ 
+időpontokban nulla.
+
 Ugyanezekben a pontokban éri el a hullámzásának a minimum és a maximum értékét.
 
 t = 
@@ -57,11 +61,16 @@ $\frac{t_{be}}{2}$-ben $U_c = U_{ki} - \Delta U_C$
 t = 
 $\frac{t_{be}}{2}$-ben pedig $U_c = U_{ki} + \Delta U_C$
 
-Ez a két időpont között $$\Delta Q = \frac{ \Delta i_L \times (\frac{t_be}{2} + \frac{t_ki}{2})}{2} = \frac{ \Delta i_L \times T}{4} = \frac{ \Delta i_L}{4f}$$
+Ez a két időpont között 
+
+$$\Delta Q = \frac{ \Delta i_L \times (\frac{t_be}{2} + \frac{t_ki}{2})}{2} = \frac{ \Delta i_L \times T}{4} = \frac{ \Delta i_L}{4f}$$
+
 A két időpont között felírható a következő egyenlet a töltés-feszültség-kapacitás kapcsolatával:
+
 $$ -\Delta U_C + \frac{\Delta Q}{C} = +\Delta U_C$$
 
 Így kaphatunk egy minimum értéket a kapacitásra, hiszen ha nagyobb a kapacitás akkor ugyanakkora töltéstől kevesebb feszültségre töltődik, így kisebb lesz a feszültségének hullámzása is:
+
 $$ C_{min} = \frac{\Delta Q}{2 \Delta U_C} = \frac{\Delta i_L}{8f \Delta U_C} = \frac{\Delta i_L}{4f U_{pp}}$$
 
 A képlet valószínűleg jó, hiszen egy [Texas Instruments méretezési utasításban](https://www.ti.com/lit/an/slva477b/slva477b.pdf?ts=1666618206561&ref_url=https%253A%252F%252Fwww.google.com%252F)  is ez szerepel.
