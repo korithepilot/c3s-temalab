@@ -24,6 +24,7 @@ $$\Delta i_{L} = \frac{U_l \times t_{ki}}{L} = \frac{(U_{ki} + U{D}) \times t_{k
 Ha a kettőt kiegyenlítjük egymással, akkor megkapjuk a bekapcsolási időt:
 
 $$  \frac{(U_{be} - U{ki}) \times t_{be}}{L} = \frac{U_{ki} \times t_{ki}}{L} = \frac{U_{ki} \times (T-t_{be})}{L}$$
+
 Innen:
 
 $$ \delta = \frac{t_{be}}{T} = \frac{U_{ki}}{U_{be}}$$
@@ -121,6 +122,7 @@ $V_{FB\_min} = 2.45 V$
 
 
 $$ U_{ki} \times \frac{ R_{19} }{ R_{19} + R_{20} } = V_{FB} $$
+
 Így $R_{19}$ a következő:
 
 $$ R_{19} = R_{20} \times \frac{ V_{FB\_typ} }{ U_{ki} - V_{FB\_typ} } = 2.382 k\Omega$$
@@ -165,6 +167,7 @@ $$ \frac{t_{on}} {\delta_{max}} = \frac{t_{off}} {1-\delta_{max}} $$
 $$ \frac{1-\delta_{max}}{\delta_{max}} t_{on} = t_{off} $$
 
 $$ \frac{1-\delta_{max}}{\delta_{max}} \times R_{RT}C_{CT} \times \ln{ \frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}} } = R_{RT}C_{CT} \times \ln {\frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}} $$
+
 $R_{RT}C_{CT}$-vel lehet egyszerűsíteni, majd mind a két oldalt e-re emelem:
 
 $$ (\frac{V_{osc\_L} - V_{REF}} {V_{osc\_H} - V_{REF}})^{ \frac{1-\delta_{max}}{\delta_{max}} } = \frac{R_{RT}I_{osc} - (V_{REF} - V_{osc\_H})} {R_{RT}I_{osc} - (V_{REF} - V_{osc\_L})}$$
