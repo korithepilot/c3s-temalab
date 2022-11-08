@@ -11,12 +11,15 @@ t_ki ideig kapcsoló nyitva: D1 dióda nyit, rajta keresztül L árama lineáris
 A következő alapegyenletből következően ki lehet számítani az áramok változását:
 
 $$U_l = \frac{di}{dt}L$$
+
 t_be ideig: 
 
 $$\Delta i_{L} = \frac{U_l \times t_{be}}{L} = \frac{(U_{be} - U{ki}) \times t_{be}}{L}$$
+
 t_ki ideig: 
 
 $$\Delta i_{L} = \frac{U_l \times t_{ki}}{L} = \frac{(U_{ki} + U{D}) \times t_{ki}}{L} \approx \frac{U_{ki} \times t_{ki}}{L}$$
+
 Így a következő a tekercs áramának időfüggvénye:
 
 ![[Pasted image 20221025113525.png]]
