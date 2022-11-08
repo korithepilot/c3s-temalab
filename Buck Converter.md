@@ -90,16 +90,44 @@ A szabályozási kör rajza:
 A kapcsoló egy SR Latch kimenetére van kapcsolva, aminek az S lábára időnként egy oszcillátor egy pulzust küld, ez felel azért hogy a kapcsoló zárjon. A kapcsoló nyitásáért a Latch R lába felelős, egy komparátor van rákötve mely a tápegységben lévő söntellenállás áramából származó feszültséget és egy kontroll feszültséget hasonlít össze, és ha az áram meghalad egy bizonyos értéket akkor lekapcsol. Ezt a kontroll feszültséget a kimeneti feszültség leosztásából kapjuk.
 
 ### A paraméterek amikre méretezünk:
-- bemeneti feszültség: $U_{be} = 48 V$
-- kimeneti feszültség: $U_{ki} = 12 V$
-- üzemi áram: $I_{norm} = 1 A$
-- csúcsáram: $I_{max} = 2 A$
+
+- bemeneti feszültség: 
+
+$U_{be} = 48 V$
+
+- kimeneti feszültség: 
+
+$U_{ki} = 12 V$
+
+- üzemi áram: 
+
+$I_{norm} = 1 A$
+
+- csúcsáram: 
+
+$I_{max} = 2 A$
+
 - a sönt árama egy áramtranszformátoron keresztül van mérve ami 50 vagy 100-as osztású $\rightarrow$ $CS_{ratio} = 50$ vagy $100$
-- maximális kitöltési tényező: $\delta_{max} = 80 \%$
-- frekvencia: $f = 200 kHz$
-- a tápegységben lévő tekercs induktivitása: $L = 100 \micro H$
-- a tápegységben lévő kondenzátor induktivitása: $C = 100 \micro F$
-- a kimeneti feszültség leosztásában lévő felső ellenállás: $R_{20} = 9.1 k\Omega$
+
+- maximális kitöltési tényező: 
+
+$\delta_{max} = 80 \%$
+
+- frekvencia: 
+
+$f = 200 kHz$
+
+- a tápegységben lévő tekercs induktivitása: 
+
+$L = 100 \micro H$
+
+- a tápegységben lévő kondenzátor induktivitása: 
+
+$C = 100 \micro F$
+
+- a kimeneti feszültség leosztásában lévő felső ellenállás: 
+
+$R_{20} = 9.1 k\Omega$
 
 ### Az áram mérésének méretezése:
 A kapcsolás aminek a kimenete az IC CS lábára megy:
@@ -107,8 +135,11 @@ A kapcsolás aminek a kimenete az IC CS lábára megy:
 A CS láb működése: ha a rá kapcsolt feszültség $V_{CS}$ adatlapi értéknél nagyobb akkor a kapcsolót nyitja. 
 
 Az adatlapból:
+
 $V_{CS\_typ} = 1 V$
+
 $V_{CS\_max} = 1.1 V$
+
 $V_{CS\_min} = 0.9 V$
 
 Az R1 ellenálláson folyható maximum áram: 
